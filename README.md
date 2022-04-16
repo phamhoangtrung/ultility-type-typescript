@@ -11,9 +11,9 @@ interface LocalStorage {
   user: {
     name:string,
     age:number
-  };
-  token:`Beaer ${string}`;
-  cookie:number;
+  }
+  token:`Beaer ${string}`
+  cookie:number
 }
 
 interface LocalStorage {
