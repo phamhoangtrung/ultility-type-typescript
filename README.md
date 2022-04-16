@@ -21,7 +21,9 @@ interface LocalStorage {
     phoneNumber:number
   }
 }
+```
 
+```ts
 localStorage.getObjectItem = function(key){
   const jsonItem = this.getItem(key)
   return jsonItem && JSON.parse(jsonItem)
