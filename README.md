@@ -2,11 +2,11 @@
 
 ```ts
 interface Storage {
-  getObjectItem: <T extends string>(key: T) => LocalStorageValue<T>;
+  getObjectItem: <T extends string>(key: T) => LocalStorageValue<T> | null;
 }
 
 type LocalStorageKey = keyof LocalStorage;
-type LocalStorageValue<T> = T extends LocalStorageKey ? LocalStorage[T] : any;
+type LocalStorageValue<T> = T extends LocalStorageKey ? LocalStorage[T] : unknown;
 
 interface LocalStorage {
   user: {
@@ -33,18 +33,18 @@ localStorage.getObjectItem = function (key) {
   return jsonItem && JSON.parse(jsonItem);
 };
 
-// const token: `Beaer ${string}`
+// const token: `Beaer ${string}` | null
 const token = localStorage.getObjectItem('token');
 
 // const address: {
 //    phoneNumber:number
-// }
+// } | null
 const address = localStorage.getObjectItem('address');
 
 // const listItem: {
 //    id:string,
 //    name:string
-// }[]
+// }[] | null
 const listItem = localStorage.getObjectItem('items');
 
 ```
