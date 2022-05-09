@@ -1,4 +1,4 @@
 # utilities-type-typescript
 
 - LocalStorage
-- isTuple
+- IsTuple
